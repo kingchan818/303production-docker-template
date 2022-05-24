@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  wordpress:
+    image: wordpress
+    
+  db:
+    container_name: wordpressdb
+    image: mariadb
+    environment:
+      - MYSQL_ROOT_PASSWORD=asd123
+      - MYSQL_USER=wpuser
+      - MYSQL_PASSWORD=wpuser@
+      - MYSQL_DATABASE=wordpress_db
+    volumes:
+      - /roor/wordpress/database:/var/lib/mysql
+  
